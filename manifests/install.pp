@@ -7,8 +7,8 @@ class flapjack::install {
     ensure    => $ensure,
   }
 
-  if $flapjack::install_gem == true {
-    package { $flapjack::gem_name:
+  if $flapjack::install_api_gem == true {
+    package { $flapjack::api_gem_name:
       ensure    => $ensure,
       provider  => 'gem',
     }
