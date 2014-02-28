@@ -1,0 +1,10 @@
+name          'dblessing-flapjack'
+version       '0.0.1'
+source        'https://github.com/dblessing/puppet-flapjack'
+author        'dblessing'
+license       'Apache License, Version 2.0'
+summary       'UNKNOWN'
+description   'UNKNOWN'
+project_page  'UNKNOWN'
+
+dependency 'puppetlabs/stdlib'
