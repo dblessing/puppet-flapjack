@@ -1,10 +1,14 @@
 # == Class: flapjack
 #
-# This class manages flapjack. If you intend to use the 
-# flapjack types to manage entities/contacts/etc in Flapjack
-# you must be running Puppet with Ruby 1.9.3 or higher.
-# Sorry, Centos/Redhat users. You need to use something like
-# puppet-omnibus to bring yourself up to Ruby 1.9.3+. 
+# This class manages flapjack. If you intend to use the gem
+# provider (which is default) or flapjack types to manage 
+# entities/contacts/etc you must be running Puppet 
+# with Ruby 1.9.3 or higher. Sorry, CentOS/RedHat 6 users. You 
+# need to use something like puppet-omnibus to bring yourself 
+# up to Ruby 1.9.3+. 
+#
+# Use yum or apt provider to install via package instead of gem
+# based on preference or to avoid the Ruby 1.9.3+ requirement.
 #
 # === Parameters
 #
@@ -37,8 +41,8 @@ class flapjack (
   $api_gem_name       = 'flapjack-diner',
 ) inherits flapjack::params {
 
-  validate_string($package_name, $gem_name)
-  validate_bool($install_gem)
+  validate_string($package_name, $api_gem_name)
+  validate_bool($install_api_gem)
 
   class { 'flapjack::install': } ->
   class { 'flapjack::config': } ~>
