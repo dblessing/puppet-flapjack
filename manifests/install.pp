@@ -5,6 +5,7 @@ class flapjack::install {
 
   package { $flapjack::package_name:
     ensure    => $ensure,
+    provider  => $flapjack::package_provider,
   }
 
   if $flapjack::install_api_gem == true {
